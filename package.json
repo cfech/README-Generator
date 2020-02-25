@@ -1,0 +1,27 @@
+{
+  "name": "readme-package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "connor",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.0.0",
+    "electron": "^5.0.3",
+    "electron-html-to": "^2.6.0",
+    "inquirer": "^6.5.2",
+    "open": "^6.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfech/README-Generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cfech/README-Generator/issues"
+  },
+  "homepage": "https://github.com/cfech/README-Generator#readme"
+}
