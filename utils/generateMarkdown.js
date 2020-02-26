@@ -1,22 +1,40 @@
-const fs = require('fs')
+
 
 function generateMarkdown(answers) {
-  fs.appendFile("Portfolio.md", JSON.stringify(answers, null, 2), function (err) {
-    if (err) {
-      console.log("There was an error")
-    } else {
-      console.log('Readme generated')
-    }
-  
-  
-  
-// //   return `
-// // # ${data.title}
 
-// // `;
-})
+
+
+
+return `
+## Title
+${answers.projectTitle}
+
+## Project Description
+${answers.description}
+
+## Table of Contents
+
+## License
+${answers.license}(link)
+
+## Dependencies
+Install dependencies with : ${answers.dependencies}
+
+## Tests
+These tests should be run: ${answers.tests}
+
+## Repository Instructions:
+${answers.userDirections}
+
+## User Contributions
+${answers.userContributions}
+
+## Questions
+
+`;
 }
+// }
 
-module.exports = generateMarkdown();
+module.exports = generateMarkdown;
 
 // generate read
