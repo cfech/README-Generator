@@ -1,10 +1,6 @@
+// Function to format document 
 
-
-function generateMarkdown(answers,url) {
-
-
-
-
+function generateMarkdown(answers,url, picture, email, link) {
 return `
 ## Title
 ${answers.projectTitle}
@@ -15,7 +11,7 @@ ${answers.description}
 ## Table of Contents
 
 ## License
-${answers.license}(link)
+${answers.license} (License Link ${link})
 
 ## Dependencies
 Install dependencies with : ${answers.dependencies}
@@ -30,11 +26,15 @@ ${answers.userDirections}
 ${answers.userContributions}
 
 ## Questions
-${url}
 
+
+User Picture ${url}
+
+${picture}
+
+user email: ${email} 
 `;
 }
-// }
 
 module.exports = generateMarkdown;
 

@@ -1,5 +1,6 @@
+//Required packages 
 var axios = require ("axios")
-
+// api call 
 const api = {
   getUser(userName) {
     const queryUrl = `https://api.github.com/users/${userName}`;
