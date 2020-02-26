@@ -1,6 +1,6 @@
 
 
-function generateMarkdown(answers) {
+function generateMarkdown(answers,url) {
 
 
 
@@ -30,6 +30,7 @@ ${answers.userDirections}
 ${answers.userContributions}
 
 ## Questions
+${url}
 
 `;
 }

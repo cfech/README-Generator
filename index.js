@@ -1,5 +1,6 @@
 const fs = require('fs')
 var markDown = require("./utils/generateMarkdown")
+var api = require("./utils/api.js")
 
 const questions = [
     
@@ -65,15 +66,23 @@ inquirer
     .prompt(questions)
     .then(function (answers) {
         console.log("TCL: answers", answers)
-        var title = markDown(answers) // not respecting .then
-        console.log(title)
+        var username = answers.userName
+        api.getUser(username)
+        .then(function(githubData){
+            console.log(githubData)
+            var url = githubData.data.url
+            console.log(url)
+
+
+        var title = markDown(answers, url) // not respecting .then
+       
         fs.writeFile("NotREADME.md", (title), function (err) {
             if (err) {
                 console.log("There was an error")
             } else {
                 console.log('Readme generated')
             }
-
+        })
         })
 
             //         return `

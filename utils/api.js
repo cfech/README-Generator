@@ -1,15 +1,13 @@
+var axios = require ("axios")
+
 const api = {
   getUser(userName) {
-    const queryUrl = `https://api.github.com/users/${userName}/repos?per_page=100`;
+    const queryUrl = `https://api.github.com/users/${userName}`;
     console.log(queryUrl)
-    axios
+    return axios
     .get(queryUrl)
-    .then(function(res){
-        console.log(res.data)
-    })
   }
 };
 
 module.exports = api;
 
-// resarch axios 
