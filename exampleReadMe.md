@@ -50,7 +50,7 @@ N/A
 
 ## Questions
 
-If you have any questions please contact : First Last, directly at (Email not available from api), or on github at https://github.com/cfech
+If you have any questions please contact : connor, directly at (Email not available from api), or on github at https://github.com/cfech
 
 <img src = "https://avatars2.githubusercontent.com/u/59180206?v=4" alt = "profile picture" width = "250"/>
 
