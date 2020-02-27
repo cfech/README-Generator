@@ -1,1 +1,2 @@
 # README-Generator
+In this project i used a combination of Node.js, javascript, and the inquirer and axios packages to write a program that takes user input and generates a README.md to start a repository with. The users github user name is taken as input and used to call the github api for account related information such as a link to their github profile, their picture/avatar, and email. If email information is not available in the response from githubs api 
