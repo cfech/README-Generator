@@ -5,18 +5,29 @@ var api = require("./utils/api.js")
 
 //Declared variables 
 var link
+var emailTwo
 
 //Questions for user 
 const questions = [
     {
-        type: "input",                            
+        type: "input",
+        message: "Who is creating this README.md?",
+        name: "owner",
+        default: "First Last"
+
+    },
+    {
+        type: "input",
         message: "What is your github user name?",
-        name: "userName"
+        name: "userName",
+        default: "cfech"
+
     },
     {
         type: "input",
         message: "What is your project name?",
-        name: "projectTitle"
+        name: "projectTitle",
+        default: "Project 1"
     },
     {
         type: "input",
@@ -27,26 +38,37 @@ const questions = [
         type: "list",
         message: "What type of license would you like?",
         name: "license",
-        choices: ["MIT", "Apache 2.0", "GPL 3.0", "Bsd 3"]
+        choices: ["MIT", "Apache.2.0", "GPL.3.0", "BSD.3"]
+
     },
     {
         type: "input",
         message: "How do you want to install dependencies?",
-        name: "dependencies"
+        name: "dependencies",
+        default: "npm i"
     },
     {
         type: "input",
         message: "What command should be run to run tests?",
-        name: "tests"
+        name: "tests",
+        default: "npm test"
     },
     {
         type: "input",
         message: "What does the user need to know about using this repo?",
-        name: "userDirections"
+        name: "userDirections",
+        default: "N/A"
     }, {
         type: "input",
         message: "What does the user need to know about contributing to this repo?",
-        name: "userContributions"
+        name: "userContributions",
+        default: "N/A"
+    },
+    {
+        type: "input",
+        message: "Are there any other special instructions you wish to give to the user?",
+        name: "specialInstructions",
+        default: "N/A"
     },
 ];
 
@@ -55,21 +77,32 @@ var inquirer = require("inquirer");
 inquirer
     .prompt(questions)
 
+
     //prompts questions then send api call 
     .then(function (answers) {
         console.log("TCL: answers", answers)
         var username = answers.userName
         api.getUser(username)
 
-        // api call then write document 
+            // api call then write document 
             .then(function (githubData) {
                 console.log(githubData)
-                var url = githubData.data.url
+                var url = githubData.data.html_url
                 var picture = githubData.data.avatar_url
                 var email = githubData.data.email
                 console.log(url)
                 console.log(picture)
                 console.log(email)
+
+                // if statement for email 
+                if (email === null) {
+                    console.log("email not available")
+                    emailTwo = "Email not available"
+                } else {
+
+                    emailTwo = email
+                }
+
 
                 //if statement to set license link
                 if (questions.license === "MIT") {
@@ -78,13 +111,13 @@ inquirer
                     link = 'https://choosealicense.com/licenses/apache-2.0/'
                 } else if (questions.license === "GPL 3.0") {
                     link = "https://choosealicense.com/licenses/gpl-3.0/"
-                } else if (questions.license === "Bsd 3") {
+                } else if (questions.license === "BSD 3") {
                     link = "https://opensource.org/licenses/BSD-3-Clause"
                 }
 
                 //calling markdown function to format document
-                var title = markDown(answers, url, picture, email, link)
-                
+                var title = markDown(answers, url, picture, emailTwo, link)
+
                 // Writing the document 
                 fs.writeFile("NotREADME.md", (title), function (err) {
                     if (err) {
