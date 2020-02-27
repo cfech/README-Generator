@@ -97,12 +97,11 @@ inquirer
                 // if statement for email 
                 if (email === null) {
                     console.log("email not available")
-                    emailTwo = "Email not available"
+                    emailTwo = "Email not available from api"
                 } else {
 
                     emailTwo = email
                 }
-
 
                 //if statement to set license link
                 if (questions.license === "MIT") {
