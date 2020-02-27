@@ -38,7 +38,7 @@ const questions = [
         type: "list",
         message: "What type of license would you like?",
         name: "license",
-        choices: ["MIT", "Apache.2.0", "GPL.3.0", "BSD.3"]
+        choices: ["MIT", "Apache 2.0", "GPL 3.0", "BSD 3"]
 
     },
     {
@@ -93,6 +93,7 @@ inquirer
                 console.log(url)
                 console.log(picture)
                 console.log(email)
+                console.log(questions.license)
 
                 // if statement for email 
                 if (email === null) {
@@ -104,15 +105,17 @@ inquirer
                 }
 
                 //if statement to set license link
-                if (questions.license === "MIT") {
+                if (answers.license === "MIT") {
                     link = "https://choosealicense.com/licenses/mit/"
-                } else if (questions.license === "Apache 2.0") {
+                } else if (answers.license === "Apache 2.0") {
                     link = 'https://choosealicense.com/licenses/apache-2.0/'
-                } else if (questions.license === "GPL 3.0") {
+                } else if (answers.license === "GPL 3.0") {
                     link = "https://choosealicense.com/licenses/gpl-3.0/"
-                } else if (questions.license === "BSD 3") {
+                } else if (answers.license === "BSD 3") {
                     link = "https://opensource.org/licenses/BSD-3-Clause"
                 }
+
+
 
                 //calling markdown function to format document
                 var title = markDown(answers, url, picture, emailTwo, link)

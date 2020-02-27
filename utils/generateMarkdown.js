@@ -28,7 +28,7 @@ To install necessary dependencies run the following command:
 ${answers.dependencies}
 
 ## License
-![Badge](https://img.shields.io/static/v1?label=${answers.license}&message=Secure&color=blue)
+![Badge](https://img.shields.io/static/v1?label=${answers.license.replace(" ", "%20")}&message=Secure&color=blue)
 
 ${answers.license} 
 
