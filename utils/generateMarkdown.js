@@ -10,11 +10,11 @@ ${answers.description}
 
 * [Installation](#Installation)  
 
-* [License](#License) 
-
 * [Tests](#Tests) 
 
-* [Repository-Instructions](#Repository-Instructions) 
+* [License](#License) 
+
+* [Usage](#Usage) 
 
 * [User-Contributions](#User-Contributions) 
 
@@ -24,8 +24,16 @@ ${answers.description}
 
 ## Installation
 To install necessary dependencies run the following command:
-
+<pre><code>
 ${answers.dependencies}
+</code></pre>
+
+
+## Tests
+Run tests with the following command:
+<pre><code>
+${answers.tests}
+</code></pre>
 
 ## License
 ![Badge](https://img.shields.io/static/v1?label=${answers.license.replace(" ", "%20")}&message=Secure&color=blue)
@@ -34,12 +42,7 @@ ${answers.license}
 
 (License Link:  ${link})
 
-## Tests
-Run tests with the following command:
-
-${answers.tests}
-
-## Repository-Instructions: 
+## Usage: 
 ${answers.userDirections}
 
 ## User-Contributions
@@ -52,11 +55,10 @@ ${answers.specialInstructions}
 
 If you have any questions please contact : ${answers.owner}, directly at (${emailTwo}), or on github at ${url}
 
-![Profile Picture](${picture})
+<img src = "${picture}" alt = "profile picture" width = "250"/>
+
 
 `;
 }
 
 module.exports = generateMarkdown;
-
-// generate read

@@ -39,7 +39,6 @@ const questions = [
         message: "What type of license would you like?",
         name: "license",
         choices: ["MIT", "Apache 2.0", "GPL 3.0", "BSD 3"]
-
     },
     {
         type: "input",
@@ -58,7 +57,8 @@ const questions = [
         message: "What does the user need to know about using this repo?",
         name: "userDirections",
         default: "N/A"
-    }, {
+    },
+    {
         type: "input",
         message: "What does the user need to know about contributing to this repo?",
         name: "userContributions",
@@ -72,35 +72,27 @@ const questions = [
     },
 ];
 
-//Runs inquirer call
+//Runs inquirer package
 var inquirer = require("inquirer");
 inquirer
     .prompt(questions)
 
-
     //prompts questions then send api call 
     .then(function (answers) {
-        console.log("TCL: answers", answers)
         var username = answers.userName
         api.getUser(username)
+       
 
             // api call then write document 
             .then(function (githubData) {
-                console.log(githubData)
                 var url = githubData.data.html_url
                 var picture = githubData.data.avatar_url
                 var email = githubData.data.email
-                console.log(url)
-                console.log(picture)
-                console.log(email)
-                console.log(questions.license)
-
+ console.log(githubData)
                 // if statement for email 
                 if (email === null) {
-                    console.log("email not available")
                     emailTwo = "Email not available from api"
                 } else {
-
                     emailTwo = email
                 }
 
@@ -115,13 +107,11 @@ inquirer
                     link = "https://opensource.org/licenses/BSD-3-Clause"
                 }
 
-
-
                 //calling markdown function to format document
                 var title = markDown(answers, url, picture, emailTwo, link)
 
                 // Writing the document 
-                fs.writeFile("NotREADME.md", (title), function (err) {
+                fs.writeFile("exampleReadMe.md", (title), function (err) {
                     if (err) {
                         console.log("There was an error")
                     } else {
