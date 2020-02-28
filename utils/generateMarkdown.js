@@ -56,8 +56,6 @@ ${answers.specialInstructions}
 If you have any questions please contact : ${answers.owner}, directly at (${emailTwo}), or on github at ${url}
 
 <img src = "${picture}" alt = "profile picture" width = "250"/>
-
-
 `;
 }
 

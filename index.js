@@ -50,7 +50,7 @@ const questions = [
         type: "input",
         message: "What command should be run to run tests?",
         name: "tests",
-        default: "npm test"
+        default: "npm run test"
     },
     {
         type: "input",
@@ -81,7 +81,6 @@ inquirer
     .then(function (answers) {
         var username = answers.userName
         api.getUser(username)
-       
 
             // api call then write document 
             .then(function (githubData) {

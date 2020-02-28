@@ -1,8 +1,8 @@
 
-# Title: Project 1
+# Title: Test Project
 
 ## Project Description
-
+This is a test project
 ## Table of Contents
 
 * [Installation](#Installation)  
@@ -29,7 +29,7 @@ npm i
 ## Tests
 Run tests with the following command:
 <pre><code>
-npm test
+npm run test
 </code></pre>
 
 ## License
@@ -40,7 +40,7 @@ MIT
 (License Link:  https://choosealicense.com/licenses/mit/)
 
 ## Usage: 
-N/A
+It is free
 
 ## User-Contributions
 N/A
@@ -50,8 +50,6 @@ N/A
 
 ## Questions
 
-If you have any questions please contact : connor, directly at (Email not available from api), or on github at https://github.com/cfech
+If you have any questions please contact : Connor Fech, directly at (Email not available from api), or on github at https://github.com/cfech
 
 <img src = "https://avatars2.githubusercontent.com/u/59180206?v=4" alt = "profile picture" width = "250"/>
-
-
